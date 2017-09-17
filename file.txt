@@ -1,0 +1,6 @@
+will use:
+AFNetworking not RestKit
+Have my own Core Data Setup, not Magical Record, but will use ObjectiveRecord for convience.
+create my own managedobject category class
+
+I want to know if there is a way to convert nsdictionary to json + change the key name in json....??? Interupted due to networking issue....
