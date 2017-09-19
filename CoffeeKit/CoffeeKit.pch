@@ -18,6 +18,7 @@
 //#import <JSONModel.h>
 #import <MJExtension/MJExtension.h>
 #import <YYModel/YYModel.h>
+#import "NSObject+NSDictionary.h"
 #import <AFNetworking/AFNetworking.h>
 //#import "CoffeeCoreDataManager.h"
 //#import "LoginCoreDataManager.h"

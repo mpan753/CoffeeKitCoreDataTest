@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0C49141F712A5000D9068D /* NSObject+NSDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0C49131F712A5000D9068D /* NSObject+NSDictionary.m */; };
 		0D356CE11F6E5F2A00FF25EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356CE01F6E5F2A00FF25EE /* main.m */; };
 		0D356CE41F6E5F2A00FF25EE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356CE31F6E5F2A00FF25EE /* AppDelegate.m */; };
 		0D356CE71F6E5F2A00FF25EE /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356CE61F6E5F2A00FF25EE /* MasterViewController.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D0C49121F712A4F00D9068D /* NSObject+NSDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSDictionary.h"; sourceTree = "<group>"; };
+		0D0C49131F712A5000D9068D /* NSObject+NSDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSDictionary.m"; sourceTree = "<group>"; };
 		0D356CDC1F6E5F2A00FF25EE /* CoffeeKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D356CE01F6E5F2A00FF25EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0D356CE21F6E5F2A00FF25EE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				0D356D1C1F6E603100FF25EE /* VenueCell.m */,
 				0DFBAD441F6F9CDA0086F14B /* NSManagedObject+Serialization.h */,
 				0DFBAD451F6F9CDA0086F14B /* NSManagedObject+Serialization.m */,
+				0D0C49121F712A4F00D9068D /* NSObject+NSDictionary.h */,
+				0D0C49131F712A5000D9068D /* NSObject+NSDictionary.m */,
 				0D356CEE1F6E5F2A00FF25EE /* Assets.xcassets */,
 				0D356CF01F6E5F2A00FF25EE /* LaunchScreen.storyboard */,
 				0D356CF31F6E5F2A00FF25EE /* Info.plist */,
@@ -581,6 +586,7 @@
 				0D356CEA1F6E5F2A00FF25EE /* DetailViewController.m in Sources */,
 				0DFBAD571F6FAA630086F14B /* LoginCoreDataManager.m in Sources */,
 				0DFBAD431F6F97510086F14B /* CStats+Extension.m in Sources */,
+				0D0C49141F712A5000D9068D /* NSObject+NSDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

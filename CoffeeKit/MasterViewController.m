@@ -163,13 +163,13 @@
 //            _venues = [Venue arrayOfModelsFromDictionaries:responseObject[@"response"][@"venues"] error:nil];
             
             for (Venue *v in self.venues) {
-                CVenue *venue = [CVenue mj_objectWithKeyValues:v.mj_keyValues context:[CoreDataManager sharedManager].managedObjectContext];
+                CVenue *venue = [CVenue mj_objectWithKeyValues:[v toDictionary] context:[CoreDataManager sharedManager].managedObjectContext];
                 
 //                [venue save];
-                Venue *copyVenue = [Venue mj_objectWithKeyValues:[venue toDictionary]];
-                NSLog(@"venue: %@", [venue toDictionary]);
-                NSLog(@"copyVenue: %@", copyVenue.mj_JSONString);
-                NSLog(@"originalVenue: %@", v.yy_modelToJSONString);
+                Venue *copyVenue = [Venue yy_modelWithDictionary:[venue toDictionary]];
+                NSLog(@"Coredata venue: %@", [venue toDictionary]);
+                NSLog(@"copyVenue: %@", [copyVenue mj_JSONString]);
+                NSLog(@"originalVenue: %@", [v toDictionary]);
             }
 //            NSLog(@"venues: %@", [Venue mj_keyValuesArrayWithObjectArray:self.venues].mj_JSONString);
             [self.tableView reloadData];
