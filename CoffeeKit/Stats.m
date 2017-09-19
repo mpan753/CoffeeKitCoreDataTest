@@ -10,4 +10,23 @@
 
 @implementation Stats
 
+//+ (JSONKeyMapper *)keyMapper {
+//    return [[JSONKeyMapper alloc]
+//            initWithModelToJSONDictionary:@{
+//                                            @"checkins" : @"checkinsCount",
+//                                            @"tips" : @"tipCount",
+//                                            @"users" : @"usersCount"
+//                                            }];
+//}
+
++ (void)load {
+    [self mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+                 @"checkins" : @"checkinsCount",
+                 @"tips" : @"tipCount",
+                 @"users" : @"usersCount"
+                 };
+    }];
+}
+
 @end

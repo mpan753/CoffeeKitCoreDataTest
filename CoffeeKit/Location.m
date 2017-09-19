@@ -10,4 +10,11 @@
 
 @implementation Location
 
+//+ (BOOL)propertyIsOptional:(NSString *)propertyName {
+//    if ([propertyName isEqual:@"crossStreet"]) {
+//        return YES;
+//    }
+//    return YES;
+//}
+
 @end

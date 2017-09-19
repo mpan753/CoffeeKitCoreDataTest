@@ -7,13 +7,20 @@
 //
 
 #import "CVenue+Extention.h"
+#import "CLocation+CoreDataClass.h"
+#import "CStats+CoreDataClass.h"
 
 @implementation CVenue (Extention)
 
-//+ (NSDictionary *)mappings {
-//    return @{
-//             @"name" : @"kname"
-//             };
-//}
++ (NSDictionary *)mappings {
+    return @{
+             @"location" : @{
+                     @"class" : [CLocation class]
+                     },
+             @"stats" : @{
+                     @"class" : [CStats class]
+                     }
+             };
+}
 
 @end

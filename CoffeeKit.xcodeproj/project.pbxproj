@@ -21,8 +21,15 @@
 		0D356D1F1F6E603100FF25EE /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356D1A1F6E603100FF25EE /* Venue.m */; };
 		0D356D201F6E603100FF25EE /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356D1C1F6E603100FF25EE /* VenueCell.m */; };
 		0D356D261F6E626500FF25EE /* CoffeeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D356D241F6E626500FF25EE /* CoffeeModel.xcdatamodeld */; };
-		0D356D521F6EAD1E00FF25EE /* NSManagedObject+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356D511F6EAD1E00FF25EE /* NSManagedObject+Serialization.m */; };
 		0D356D821F6EB79100FF25EE /* CVenue+Extention.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D356D811F6EB79100FF25EE /* CVenue+Extention.m */; };
+		0DFBAD401F6F69CF0086F14B /* LoginModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD3E1F6F69CF0086F14B /* LoginModel.xcdatamodeld */; };
+		0DFBAD431F6F97510086F14B /* CStats+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD421F6F97510086F14B /* CStats+Extension.m */; };
+		0DFBAD461F6F9CDA0086F14B /* NSManagedObject+Serialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD451F6F9CDA0086F14B /* NSManagedObject+Serialization.m */; };
+		0DFBAD4F1F6FA6B10086F14B /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD491F6FA6B10086F14B /* CoreDataManager.m */; };
+		0DFBAD501F6FA6B10086F14B /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD4B1F6FA6B10086F14B /* NSManagedObject+ActiveRecord.m */; };
+		0DFBAD511F6FA6B10086F14B /* NSManagedObject+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD4D1F6FA6B10086F14B /* NSManagedObject+Mappings.m */; };
+		0DFBAD541F6FAA4E0086F14B /* CoffeeCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD531F6FAA4E0086F14B /* CoffeeCoreDataManager.m */; };
+		0DFBAD571F6FAA630086F14B /* LoginCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFBAD561F6FAA630086F14B /* LoginCoreDataManager.m */; };
 		17A453DE4DF3E4838F88B6D2 /* libPods-CoffeeKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B66E1CD22FDC1057AD5084 /* libPods-CoffeeKitTests.a */; };
 		70813CE13ECFBCB763537E74 /* libPods-CoffeeKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95BD9DB3B94D4EC47B57F3C1 /* libPods-CoffeeKitUITests.a */; };
 		9E8D1073AD89E52792AA02E5 /* libPods-CoffeeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0CD227A69CB834C4A69E41E /* libPods-CoffeeKit.a */; };
@@ -74,10 +81,24 @@
 		0D356D1C1F6E603100FF25EE /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCell.m; sourceTree = "<group>"; };
 		0D356D251F6E626500FF25EE /* CoffeeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeModel.xcdatamodel; sourceTree = "<group>"; };
 		0D356D4C1F6E639000FF25EE /* CoffeeKit.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeKit.pch; sourceTree = "<group>"; };
-		0D356D501F6EAD1E00FF25EE /* NSManagedObject+Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Serialization.h"; sourceTree = "<group>"; };
-		0D356D511F6EAD1E00FF25EE /* NSManagedObject+Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Serialization.m"; sourceTree = "<group>"; };
 		0D356D801F6EB79100FF25EE /* CVenue+Extention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CVenue+Extention.h"; sourceTree = "<group>"; };
 		0D356D811F6EB79100FF25EE /* CVenue+Extention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CVenue+Extention.m"; sourceTree = "<group>"; };
+		0DFBAD3F1F6F69CF0086F14B /* LoginModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoginModel.xcdatamodel; sourceTree = "<group>"; };
+		0DFBAD411F6F97510086F14B /* CStats+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CStats+Extension.h"; sourceTree = "<group>"; };
+		0DFBAD421F6F97510086F14B /* CStats+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CStats+Extension.m"; sourceTree = "<group>"; };
+		0DFBAD441F6F9CDA0086F14B /* NSManagedObject+Serialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Serialization.h"; sourceTree = "<group>"; };
+		0DFBAD451F6F9CDA0086F14B /* NSManagedObject+Serialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Serialization.m"; sourceTree = "<group>"; };
+		0DFBAD481F6FA6B10086F14B /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		0DFBAD491F6FA6B10086F14B /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		0DFBAD4A1F6FA6B10086F14B /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		0DFBAD4B1F6FA6B10086F14B /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
+		0DFBAD4C1F6FA6B10086F14B /* NSManagedObject+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Mappings.h"; sourceTree = "<group>"; };
+		0DFBAD4D1F6FA6B10086F14B /* NSManagedObject+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Mappings.m"; sourceTree = "<group>"; };
+		0DFBAD4E1F6FA6B10086F14B /* ObjectiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveRecord.h; sourceTree = "<group>"; };
+		0DFBAD521F6FAA4E0086F14B /* CoffeeCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoffeeCoreDataManager.h; sourceTree = "<group>"; };
+		0DFBAD531F6FAA4E0086F14B /* CoffeeCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoffeeCoreDataManager.m; sourceTree = "<group>"; };
+		0DFBAD551F6FAA630086F14B /* LoginCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCoreDataManager.h; sourceTree = "<group>"; };
+		0DFBAD561F6FAA630086F14B /* LoginCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCoreDataManager.m; sourceTree = "<group>"; };
 		1542FD664058ECBC2ADEBC58 /* Pods-CoffeeKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeKitTests/Pods-CoffeeKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		51B66E1CD22FDC1057AD5084 /* libPods-CoffeeKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoffeeKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		878AB55013CA2FFA33E2F928 /* Pods-CoffeeKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeKitUITests/Pods-CoffeeKitUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,9 +163,14 @@
 		0D356CDE1F6E5F2A00FF25EE /* CoffeeKit */ = {
 			isa = PBXGroup;
 			children = (
+				0DFBAD471F6FA6B10086F14B /* ObjectiveRecord */,
 				0D356D391F6E62D100FF25EE /* CoreData */,
 				0D356CE21F6E5F2A00FF25EE /* AppDelegate.h */,
 				0D356CE31F6E5F2A00FF25EE /* AppDelegate.m */,
+				0DFBAD521F6FAA4E0086F14B /* CoffeeCoreDataManager.h */,
+				0DFBAD531F6FAA4E0086F14B /* CoffeeCoreDataManager.m */,
+				0DFBAD551F6FAA630086F14B /* LoginCoreDataManager.h */,
+				0DFBAD561F6FAA630086F14B /* LoginCoreDataManager.m */,
 				0D356CE51F6E5F2A00FF25EE /* MasterViewController.h */,
 				0D356CE61F6E5F2A00FF25EE /* MasterViewController.m */,
 				0D356CE81F6E5F2A00FF25EE /* DetailViewController.h */,
@@ -158,8 +184,8 @@
 				0D356D1A1F6E603100FF25EE /* Venue.m */,
 				0D356D1B1F6E603100FF25EE /* VenueCell.h */,
 				0D356D1C1F6E603100FF25EE /* VenueCell.m */,
-				0D356D501F6EAD1E00FF25EE /* NSManagedObject+Serialization.h */,
-				0D356D511F6EAD1E00FF25EE /* NSManagedObject+Serialization.m */,
+				0DFBAD441F6F9CDA0086F14B /* NSManagedObject+Serialization.h */,
+				0DFBAD451F6F9CDA0086F14B /* NSManagedObject+Serialization.m */,
 				0D356CEE1F6E5F2A00FF25EE /* Assets.xcassets */,
 				0D356CF01F6E5F2A00FF25EE /* LaunchScreen.storyboard */,
 				0D356CF31F6E5F2A00FF25EE /* Info.plist */,
@@ -174,6 +200,7 @@
 				0D356D4C1F6E639000FF25EE /* CoffeeKit.pch */,
 				0D356CE01F6E5F2A00FF25EE /* main.m */,
 				0D356D241F6E626500FF25EE /* CoffeeModel.xcdatamodeld */,
+				0DFBAD3E1F6F69CF0086F14B /* LoginModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -201,8 +228,24 @@
 			children = (
 				0D356D801F6EB79100FF25EE /* CVenue+Extention.h */,
 				0D356D811F6EB79100FF25EE /* CVenue+Extention.m */,
+				0DFBAD411F6F97510086F14B /* CStats+Extension.h */,
+				0DFBAD421F6F97510086F14B /* CStats+Extension.m */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0DFBAD471F6FA6B10086F14B /* ObjectiveRecord */ = {
+			isa = PBXGroup;
+			children = (
+				0DFBAD481F6FA6B10086F14B /* CoreDataManager.h */,
+				0DFBAD491F6FA6B10086F14B /* CoreDataManager.m */,
+				0DFBAD4A1F6FA6B10086F14B /* NSManagedObject+ActiveRecord.h */,
+				0DFBAD4B1F6FA6B10086F14B /* NSManagedObject+ActiveRecord.m */,
+				0DFBAD4C1F6FA6B10086F14B /* NSManagedObject+Mappings.h */,
+				0DFBAD4D1F6FA6B10086F14B /* NSManagedObject+Mappings.m */,
+				0DFBAD4E1F6FA6B10086F14B /* ObjectiveRecord.h */,
+			);
+			path = ObjectiveRecord;
 			sourceTree = "<group>";
 		};
 		2EF27185DB0C4F470F5A1ADB /* Pods */ = {
@@ -521,16 +564,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D356D821F6EB79100FF25EE /* CVenue+Extention.m in Sources */,
+				0DFBAD461F6F9CDA0086F14B /* NSManagedObject+Serialization.m in Sources */,
 				0D356CE41F6E5F2A00FF25EE /* AppDelegate.m in Sources */,
 				0D356D201F6E603100FF25EE /* VenueCell.m in Sources */,
+				0DFBAD511F6FA6B10086F14B /* NSManagedObject+Mappings.m in Sources */,
 				0D356D1D1F6E603100FF25EE /* Location.m in Sources */,
 				0D356D1F1F6E603100FF25EE /* Venue.m in Sources */,
+				0DFBAD401F6F69CF0086F14B /* LoginModel.xcdatamodeld in Sources */,
 				0D356CE71F6E5F2A00FF25EE /* MasterViewController.m in Sources */,
+				0DFBAD501F6FA6B10086F14B /* NSManagedObject+ActiveRecord.m in Sources */,
+				0DFBAD4F1F6FA6B10086F14B /* CoreDataManager.m in Sources */,
 				0D356D261F6E626500FF25EE /* CoffeeModel.xcdatamodeld in Sources */,
+				0DFBAD541F6FAA4E0086F14B /* CoffeeCoreDataManager.m in Sources */,
 				0D356D1E1F6E603100FF25EE /* Stats.m in Sources */,
 				0D356CE11F6E5F2A00FF25EE /* main.m in Sources */,
-				0D356D521F6EAD1E00FF25EE /* NSManagedObject+Serialization.m in Sources */,
 				0D356CEA1F6E5F2A00FF25EE /* DetailViewController.m in Sources */,
+				0DFBAD571F6FAA630086F14B /* LoginCoreDataManager.m in Sources */,
+				0DFBAD431F6F97510086F14B /* CStats+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +858,16 @@
 			);
 			currentVersion = 0D356D251F6E626500FF25EE /* CoffeeModel.xcdatamodel */;
 			path = CoffeeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		0DFBAD3E1F6F69CF0086F14B /* LoginModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0DFBAD3F1F6F69CF0086F14B /* LoginModel.xcdatamodel */,
+			);
+			currentVersion = 0DFBAD3F1F6F69CF0086F14B /* LoginModel.xcdatamodel */;
+			path = LoginModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -23,6 +23,8 @@
 
 @property (nonatomic, strong) NSArray *venues;
 
+@property (nonatomic, strong) AFHTTPSessionManager *httpManager;
+
 @end
 
 @implementation MasterViewController
@@ -31,15 +33,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
+    NSLog(@"Storeurl: %@", [[[CoreDataManager sharedManager] persistentStoreCoordinator] URLForPersistentStore:[[[[CoreDataManager sharedManager] persistentStoreCoordinator] persistentStores] firstObject]]);
     
     //    self.navigationItem.rightBarButtonItem = addButton;
     //    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
-    [self configureRestKit];
+//    [self configureRestKit];
+    [self configureAFNetworking];
     [self loadVenues];
 }
 
+- (AFHTTPSessionManager *)httpManager {
+    if (!_httpManager) {
+        NSString *serverUrl = @"https://api.foursquare.com";
+        _httpManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:serverUrl]];
+    }
+    return _httpManager;
+}
+
+- (void)configureAFNetworking {
+//    self.httpManager
+}
+/*
 - (void)configureRestKit
 {
     // initialize AFNetworking HTTPClient
@@ -95,10 +110,8 @@
     
     
     RKLogConfigureByName("RestKit/CoreData", RKLogLevelDebug);
-    
-    /**
+ 
      Complete Core Data stack initialization
-     */
     [managedObjectStore createPersistentStoreCoordinator];
     NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"RKTwitter.sqlite"];
     NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
@@ -115,7 +128,7 @@
     
 
 }
-
+*/
 - (void)loadVenues
 {
     NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership (a.k.a Apple headquarters)
@@ -127,20 +140,43 @@
                                   @"client_secret" : clientSecret,
                                   @"categoryId" : @"4bf58dd8d48988d1e0931735",
                                   @"v" : @"20140118"};
-    
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/v2/venues/search"
-                                           parameters:queryParams
-                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                                  _venues = mappingResult.array;
-//                                                  [self saveDatabase];
-                                                  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
-                                                  NSLog(@"URL: %@", seedPath);
-                                                  
-                                                  [self.tableView reloadData];
-                                              }
-                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                  NSLog(@"What do you mean by 'there is no coffee?': %@", error);
-                                              }];
+//    {
+//    [[RKObjectManager sharedManager] getObjectsAtPath:@"/v2/venues/search"
+//                                           parameters:queryParams
+//                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//                                                  _venues = mappingResult.array;
+//
+//                                                  NSString *seedPath = [[NSBundle mainBundle] pathForResource:@"RKSeedDatabase" ofType:@"sqlite"];
+//                                                  NSLog(@"URL: %@", seedPath);
+//                                                  
+//                                                  [self.tableView reloadData];
+//                                              }
+//                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//                                                  NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+//                                              }];
+//    }
+    [self.httpManager GET:@"/v2/venues/search" parameters:queryParams progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"response: %@", responseObject[@"response"][@"venues"]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            _venues = [NSArray yy_modelWithDictionary:responseObject[@"response"][@"venues"]];
+            _venues = [Venue mj_objectArrayWithKeyValuesArray:responseObject[@"response"][@"venues"]];
+//            _venues = [Venue arrayOfModelsFromDictionaries:responseObject[@"response"][@"venues"] error:nil];
+            
+            for (Venue *v in self.venues) {
+                CVenue *venue = [CVenue mj_objectWithKeyValues:v.mj_keyValues context:[CoreDataManager sharedManager].managedObjectContext];
+                
+//                [venue save];
+                Venue *copyVenue = [Venue mj_objectWithKeyValues:[venue toDictionary]];
+                NSLog(@"venue: %@", [venue toDictionary]);
+                NSLog(@"copyVenue: %@", copyVenue.mj_JSONString);
+                NSLog(@"originalVenue: %@", v.yy_modelToJSONString);
+            }
+//            NSLog(@"venues: %@", [Venue mj_keyValuesArrayWithObjectArray:self.venues].mj_JSONString);
+            [self.tableView reloadData];
+        });
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"Error: %@", error.localizedDescription);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -194,12 +230,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     VenueCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VenueCell" forIndexPath:indexPath];
     
-    CVenue *venue = _venues[indexPath.row];
-    cell.nameLabel.text = [venue valueForKey:@"kname"];
-    cell.distanceLabel.text = [NSString stringWithFormat:@"%.0fm", @(venue.location.distance).floatValue];
-    cell.checkinsLabel.text = [NSString stringWithFormat:@"%d checkins", @(venue.stats.checkins).intValue];
+    Venue *venue = _venues[indexPath.row];
+    cell.nameLabel.text = [venue valueForKey:@"name"];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.0fm", venue.location.distance.floatValue];
+    cell.checkinsLabel.text = [NSString stringWithFormat:@"%d checkins", venue.stats.checkins.intValue];
     
-    NSLog(@"keys: %@", [venue toDictionary]);
+//    NSLog(@"json: %@", [venue toJSONString]);
     return cell;
 }
 

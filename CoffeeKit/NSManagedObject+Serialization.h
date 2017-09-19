@@ -1,3 +1,4 @@
+@import CoreData;
 @interface NSManagedObject (Serialization)
 
 - (NSDictionary*) toDictionary;

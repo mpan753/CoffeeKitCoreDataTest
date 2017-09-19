@@ -24,9 +24,15 @@
     splitViewController.delegate = self;
     
 //    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"CoffeeModel.sqlite"];
+//    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"LoginModel.sqlite"];
+    [[CoreDataManager sharedManager] setModelName:@"CoffeeModel"];
+    [[CoreDataManager sharedManager] setDatabaseName:@"CoffeeModel.sqlite"];
     
-
-    
+//    NSURL *directory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+//                                                               inDomains:NSUserDomainMask] lastObject];
+//    NSURL *databaseDir = [directory URLByAppendingPathComponent:@"LoginModel.sqlite"];
+//    [[[CoreDataManager sharedManager] persistentStoreCoordinator] addPersistentStoreWithType:NSSQLiteStoreType configuration:@"Login" URL:databaseDir options:nil error:nil];
+//
     return YES;
 }
 

@@ -9,7 +9,7 @@
 
 #define DATE_ATTR_PREFIX @"dAtEaTtr:"
 #warning "Change CLASS_PREFIX if it's not ABC"
-#define CLASS_PREFIX @"ABC"
+#define CLASS_PREFIX @""
 
 #pragma mark -
 #pragma mark Dictionary conversion methods
