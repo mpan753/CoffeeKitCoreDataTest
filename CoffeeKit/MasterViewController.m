@@ -22,7 +22,9 @@
 @interface MasterViewController ()
 
 @property (nonatomic, strong) NSArray *venues;
-
+@property (strong, nonatomic) IBOutlet UIButton *startButton;
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
+@property (strong, nonatomic) NSNumber *elapsedTime;
 @property (nonatomic, strong) AFHTTPSessionManager *httpManager;
 
 @end
@@ -39,8 +41,66 @@
     //    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
 //    [self configureRestKit];
-    [self configureAFNetworking];
-    [self loadVenues];
+//    [self configureAFNetworking];
+//    [self loadVenues];
+    [self startAnother];
+//    [self start];
+}
+
+- (RACSignal *)newPaymentSignal
+{
+    return [[RACSignal return:@"token"] delay:2];
+}
+
+- (void)start
+{
+    NSInteger refreshInterval = 30;
+    
+    RACSignal *refreshTokenTimerSignal =
+    [[RACSignal interval:refreshInterval onScheduler:[RACScheduler mainThreadScheduler]]
+     startWith:[NSDate date]];
+    
+    [[[[refreshTokenTimerSignal
+        flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+            return [self newPaymentSignal];
+        }]
+       map:^NSDate *(NSString *paymentToken)
+       {
+           // display paymentToken here
+           NSLog(@"%@", paymentToken);
+           
+           return [[NSDate date] dateByAddingTimeInterval:refreshInterval];
+       }]
+      flattenMap:^__kindof RACSignal * _Nullable(NSDate * _Nullable expiryDate) {
+          return [[[[RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]]
+                    startWith:[NSDate date]]
+                   takeUntil:[refreshTokenTimerSignal skip:1]]
+                  map:^NSNumber *(NSDate *now)
+                  {
+                      return @([expiryDate timeIntervalSinceDate:now]);
+                  }];
+      }]
+     subscribeNext:^(NSNumber *remaining)
+     {
+         // update timer readout here
+         NSLog(@"%@", remaining);
+     }];
+}
+
+- (void)startAnother {
+    @weakify(self);
+    [[self.startButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(UIButton *sender) {
+        @strongify(self);
+        self.startButton.enabled = NO;
+        NSDate *startDate = [NSDate date];
+        RAC(self, elapsedTime) = [[[[[RACSignal interval:0.1f onScheduler:
+                                      [RACScheduler schedulerWithPriority:RACSchedulerPriorityDefault]]
+                                     startWith:[NSDate date]]
+                                    takeUntil:[self.stopButton rac_signalForControlEvents:UIControlEventTouchUpInside]] map:^id(id value) {
+            NSTimeInterval timeInterval = [(NSDate *)value timeIntervalSinceDate:startDate];
+            return [NSNumber numberWithDouble:timeInterval];
+        }] deliverOn:[RACScheduler mainThreadScheduler]];
+    }];
 }
 
 - (AFHTTPSessionManager *)httpManager {

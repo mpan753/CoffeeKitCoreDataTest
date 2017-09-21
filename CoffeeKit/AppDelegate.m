@@ -18,15 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
+//    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+//    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+//    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+//    splitViewController.delegate = self;
     
 //    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"CoffeeModel.sqlite"];
 //    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"LoginModel.sqlite"];
-    [[CoreDataManager sharedManager] setModelName:@"CoffeeModel"];
-    [[CoreDataManager sharedManager] setDatabaseName:@"CoffeeModel.sqlite"];
+//    [[CoreDataManager sharedManager] setModelName:@"CoffeeModel"];
+//    [[CoreDataManager sharedManager] setDatabaseName:@"CoffeeModel.sqlite"];
     
 //    NSURL *directory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
 //                                                               inDomains:NSUserDomainMask] lastObject];

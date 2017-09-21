@@ -22,5 +22,6 @@
 #import <AFNetworking/AFNetworking.h>
 //#import "CoffeeCoreDataManager.h"
 //#import "LoginCoreDataManager.h"
+#import <ReactiveObjC/ReactiveObjC.h>
 
 #endif /* CoffeeKit_pch */
